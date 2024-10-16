@@ -1,0 +1,161 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: azure;
+}
+.header-fdiv {
+    float: left;
+}
+.header-sdiv {
+    text-align: center;
+    display: block;
+}
+.header-h1 {
+    font-size: 3rem;
+    padding-bottom: 2px;
+}
+.header-div {
+    padding: 2rem;
+}
+.logo {
+    width: 5rem;
+}
+.header {
+    display: flex;
+    border-bottom: 2px solid #000;
+    background-color: bisque;
+    width: 100%;
+    height: 30vh;
+}
+
+
+/* ############################# Main styling ########### */
+.div-h1{
+    text-align: center;
+    color:#f0f0f0;
+    background-color: #0000000e;
+}
+.form {
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/static/download-photo.jpg), #f0f0f0;
+    background-position: center;
+    background-size: cover;
+    padding: 1rem;
+}
+.main {
+    padding-top: 3rem;
+}
+.input, .selection {
+    display: block;
+    flex-wrap: wrap;
+    border: 2px solid green;
+    border-radius: 20px;
+    padding: 1.5rem;
+    width: 70%;
+    margin: 1rem auto;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.5);
+    font-weight: 600;
+    font-size: 1rem;
+}
+option{
+    border: 2px solid green;
+    border-radius: 20px ;
+}
+.label-1{
+    display: block;
+    color: aliceblue;
+    width: 70%;
+    margin: 0 auto;
+    font-weight: 800;
+}
+.input:focus, .selection:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+.input:hover, .selection:hover {
+    border-color: #007BFF;
+    outline: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    transform: scale(1.05);
+}
+.btn {
+    display: flex;
+    margin: 1rem auto;
+    justify-content: center;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 1rem;
+    width: 50%;
+    color: white;
+    font-weight: 800;
+    background-color: rgb(11, 177, 5);
+    cursor: pointer;
+    border-radius: 100px;
+    font-size: 1.2rem;
+}
+.btn:hover {
+    color: rgb(11, 177, 5);
+    background-color: white;
+    border: 2px solid rgb(11, 177, 5);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    transform: scale(1.05);
+}
+
+
+/* ################################################ */
+.support-platform {
+    border: 2px solid green;
+    background-color: rgba(192, 255, 234, 0.493);
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+/* ##################################################### */
+.footer {
+    border-top: 2px solid rgb(0, 0, 0);
+    background-color: green;
+    text-align: center;
+    padding: 1rem;
+    color:#f0f0f0;
+}
+
+.contener_all {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+/* ###########################################3 */
+@media (max-width: 630px) {
+    .header-sdiv {
+        font-size: 1rem;
+    }
+    .header-h1 {
+        font-size: 2rem;
+    }
+    .btn {
+        width: 70%;
+    }
+    .selection, .input ,.label-1{
+        width: 90%;
+    }
+}
+@media (max-width: 400px) {
+    .header-sdiv {
+        font-size: 1rem;
+    }
+    .header-h1 {
+        font-size: 1.5rem;
+    }
+    .btn {
+        width: 80%;
+        font-size: 1rem;
+    }
+    .selection, .input {
+        padding: 1rem;
+    }
+}

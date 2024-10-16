@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ba1f0aa560.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Quick Downloader</title>
+    <link rel="icon" href="/static/downloader.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="contener_all header-div">
+            <div class="header-fdiv">
+                <img class="logo" src="/static/downloader.ico" alt="Quick Downloader logo">
+            </div>
+            <div class="header-sdiv">
+                <h1 class="header-h1">Quick Downloader</h1>
+                <p class="header-p">Quick and Easy Video & Audio Downloads from Any Platform</p>
+            </div>
+        </div>        
+    </header>
+
+    <main class="main">
+        <div class="main-div">
+            <form class="form contener_all" action="/download" method="POST"><br>
+                <h1 class="div-h1">Quick Downloader</h1><br><br>
+    
+                <!-- URL Input -->
+                <label class="label-1" for="input">Enter URL:</label>
+                <input id="input" class="input selection" type="text" placeholder="Enter URL" name="input-url" title="Enter URL of any video or audio" required><br><br>
+    
+                <!-- Format Selection -->
+                <label class="label-1" for="select">Choose Format:</label>
+                <div class="custom-select-container">
+                    <select class="selection" name="select-video-or-audio" id="select" required>
+                        <optgroup label="Select Format">
+                            <option value="Video">🎬 Video</option>
+                            <option value="Audio">🎵 Audio</option>
+                        </optgroup>
+                    </select>
+                </div><br><br>
+    
+                <!-- Quality Selection -->
+                <label class="label-1" for="quality-select">Choose Quality:</label>
+                <select class="selection" name="select-quality" id="quality-select" required>
+                    <option value="best">Best</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select><br><br>
+    
+                <!-- Submit Button -->
+                <button type="submit" class="btn">Download</button>
+            </form>
+        </div>
+    </main><br><br>
+    
+
+    <section>
+        <div class="contener_all support-platform">
+            <h1>Support Platform</h1>
+            <div><br>
+                <ul class="contener_all">
+                    <li>YouTube</li>
+                    <li>Facebook</li>
+                    <li>Tiktok</li>
+                    <li>Instagram</li>
+                    <li>Twitter</li>
+                    <li>SoundCloud</li>
+                    <li>DailyMotion</li>
+                    <li>Others</li>
+                </ul>
+            </div>
+        </div>
+    </section><br><br>
+
+    <footer class="footer">
+        <div class="footer-div">
+            <h1>Quick Downloader</h1><br>
+            <p>&copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.</p><br>
+        </div>
+    </footer>
+</body>
+</html>
