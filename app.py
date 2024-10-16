@@ -14,17 +14,15 @@ if not os.path.exists(DOWNLOAD_DIR):
 
 # Function to download media
 def download_media(url, format_choice, quality):
-    quality_mapping = {
-        'best': 'best',
-        'High': 'bestvideo[height<=720]+bestaudio',
-        'Medium': 'bestvideo[height<=480]+bestaudio',
-        'Low': 'bestvideo[height<=360]+bestaudio',
-    }
-
+    # yt-dlp options based on user's choices
     ydl_opts = {
-        'format': quality_mapping.get(quality, 'best'),
-        'outtmpl': os.path.join(DOWNLOAD_DIR, '%(title)s.%(ext)s'),
-        'noplaylist': True
+        'format':
+        f'bestvideo[height<={quality}]+bestaudio/best'
+        if format_choice == 'Video' else 'bestaudio',
+        'outtmpl':
+        os.path.join(DOWNLOAD_DIR, '%(title)s.%(ext)s'),
+        'noplaylist':
+        True
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -35,7 +33,8 @@ def download_media(url, format_choice, quality):
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template(
+        'index.html')  # Ensure this matches your HTML file name
 
 
 @app.route('/download', methods=['POST'])
@@ -50,13 +49,13 @@ def download():
 
         flash(f'Successfully downloaded: {title}', 'success')
 
-        # Use after_this_request to delete the file after download
+        # Schedule file deletion after the response
         @after_this_request
         def remove_file(response):
             try:
                 os.remove(filepath)
             except Exception as e:
-                print(f"Error deleting file {filepath}: {str(e)}")
+                print(f"Error deleting file: {str(e)}")
             return response
 
         # Return the downloaded file for the user to download
@@ -82,4 +81,4 @@ def clear_downloads():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(dbug=False,host='0.0.0.0')
